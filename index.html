@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f2937" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Friendsy Snake</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="A cozy, friendship-café themed Snake game. PWA-ready with offline play, power-ups, obstacles and background music." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-dot dot1"></div>
+      <div class="logo-dot dot2"></div>
+      <div class="logo-dot dot3"></div>
+      <span>Friendsy Snake</span>
+    </div>
+    <div class="controls">
+      <button id="btn-pause" class="btn">Pause</button>
+      <button id="btn-mute" class="btn">Mute</button>
+      <button id="btn-install" class="btn secondary" hidden>Install</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <canvas id="game" width="560" height="560" aria-label="Snake game canvas" role="img"></canvas>
+      <div class="mobile-controls">
+        <button class="pad up" data-dir="up">▲</button>
+        <div class="row">
+          <button class="pad left" data-dir="left">◀</button>
+          <button class="pad right" data-dir="right">▶</button>
+        </div>
+        <button class="pad down" data-dir="down">▼</button>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="card">
+        <h2>Scoreboard</h2>
+        <div class="score-line"><span>Score</span><strong id="score">0</strong></div>
+        <div class="score-line"><span>High Score</span><strong id="high">0</strong></div>
+        <div class="score-line"><span>Level</span><strong id="level">1</strong></div>
+        <div id="status"></div>
+      </div>
+
+      <div class="card">
+        <h2>Power‑ups</h2>
+        <ul class="legend">
+          <li><span class="chip chip-coffee"></span> Coffee: 2× points (10s)</li>
+          <li><span class="chip chip-boots"></span> Boots: Speed boost (8s)</li>
+          <li><span class="chip chip-shield"></span> Umbrella: One-time shield</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>How to Play</h2>
+        <ul>
+          <li>Use Arrow keys / WASD or on-screen pads.</li>
+          <li>Avoid obstacles and yourself. Eat snacks to grow.</li>
+          <li>Collect power‑ups for bonuses.</li>
+          <li>Background music is generated in‑app (no downloads).</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <small>Made with ❤️ for the cozy 90s sitcom‑café vibe. Works offline.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
